@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+// import Createbarcode from './Components/Createbarcode'
+import ReadBarcodes from "./Components/ReadBarcode";
 function App() {
+  const [state, setState] = useState({
+    page: 1,
+  });
+  const changePage = (e) => {
+    console.log("page Changed");
+    var value = state.page + 1;
+    setState({
+      page: value,
+    });
+  };
+  const page2 = (e) => {
+    console.log("page Changed");
+    var value = state.page - 1;
+    setState({
+      page: value,
+    });
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Welcome to HimAus Royalty</h1>
+      <ReadBarcodes masterState={state} page2={page2} changePage={changePage} />
+      {/* <button onClick = {changePage}> change page</button> */}
     </div>
   );
 }
