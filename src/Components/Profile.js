@@ -17,7 +17,7 @@ const Profile = ({ page2, code }) => {
             <br />
             <h2>
               Name : Hiraman Shrestha<br></br>
-              Membership Status : Active
+              Membership Status : <span style={{color:"green"}} >Active</span>
             </h2>
           </div>
           <button onClick={scanAgain}>Scan again</button>
@@ -32,7 +32,7 @@ const Profile = ({ page2, code }) => {
             <h2>
               {" "}
               Name : Sofiya Gurung<br></br>
-              Membership Status : Active
+              Membership Status : <span style={{color:"red"}} >Inactive</span>
             </h2>
           </div>
           <button onClick={scanAgain}><strong>Scan Again</strong></button>
